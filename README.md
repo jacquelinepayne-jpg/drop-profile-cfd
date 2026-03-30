@@ -66,8 +66,11 @@ Mesh cross-sections extracted from ParaView (snappyHexMesh output, mid-span slic
 | `basic-half-circle` | ![basic-half-circle mesh](images/mesh/half-circle.png) |
 | `sharp-nose-flat-tail` | ![sharp-nose-flat-tail mesh](images/mesh/sharp-nose-flat-tail.png) |
 | `dfs-truncated-circle` | ![dfs-truncated-circle mesh](images/mesh/dfs-truncated-circle.png) |
+| `sharp-nose-only` | ![sharp-nose-only mesh](images/mesh/sharp-nose-only.png) |
+| `sharp-nose-sharp-tail` | ![sharp-nose-sharp-tail mesh](images/mesh/sharp-nose-sharp-tail.png) |
+| `sharp-nose-rounded-tail` | ![ sharp-nose-rounded-tail mesh](images/mesh/sharp-nose-rounded-tail.png) |
+| `truncated-circle` | ![truncated-circle mesh](images/mesh/truncated-circle.png) |
 
-<!-- Missing: sharp-nose-only, sharp-nose-sharp-tail, sharp-nose-rounded-tail, truncated-circle -->
 
 ### Drag Visualization
 
@@ -77,8 +80,10 @@ Mesh cross-sections extracted from ParaView (snappyHexMesh output, mid-span slic
 | `basic-half-circle` | ![basic-half-circle drag](images/drag/half-circle-drag.png) |
 | `sharp-nose-flat-tail` | ![sharp-nose-flat-tail drag](images/drag/sharp-nose-flat-tail-drag.png) |
 | `dfs-truncated-circle` | ![dfs-truncated-circle drag](images/drag/dfs-truncated-circle-drag.png) |
-
-<!-- Missing: sharp-nose-only, sharp-nose-sharp-tail, sharp-nose-rounded-tail, truncated-circle -->
+| `sharp-nose-only` | ![sharp-nose-only drag](images/drag/sharp-nose-only-drag.png) |
+| `sharp-nose-sharp-tail` | ![sharp-nose-sharp-tail drag](images/drag/sharp-nose-sharp-tail-drag.png) |
+| `sharp-nose-rounded-tail` | ![ sharp-nose-rounded-tail drag](images/drag/sharp-nose-rounded-tail-drag.png) |
+| `truncated-circle` | ![truncated-circle drag](images/drag/truncated-circle-drag.png) |
 
 
 ## Repository Structure
