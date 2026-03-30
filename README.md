@@ -2,27 +2,24 @@
 
 A computational fluid dynamics (CFD) comparison of 8 handlebar cross-section profiles to determine which geometry produces the least aerodynamic drag. This study was motivated by a practical question: which drop handlebar profile is actually most aerodynamic for road cycling?
 
----
 
 ## Background
 
 Drop handlebars come in a wide variety of cross-sectional shapes, from simple round tubes to complex aero profiles with sharp noses, flat tails, and everything in between. Rather than relying on manufacturer marketing, I ran steady-state CFD simulations in OpenFOAM to compare 8 candidate profiles under realistic riding conditions. This was in collaboration with my partner Jake Sanchez, who has been modeling a new handlebar that he plans to manufacture himself. I have also run CFD on his handlebar models, though these results remain private until release. 
 
----
 
 ## Methodology
 
-**Solver:** OpenFOAM v2406 — `simpleFoam` (steady-state, incompressible RANS)
-**Turbulence model:** k-omega SST
-**Wind speed:** 12.5 m/s (~45 km/h) — representative of road/time-trial cycling
-**Iterations:** 500 (converged)
-**Reference length:** 23.8 mm
-**Reference area:** 7.14 × 10⁻³ m²
-**Fluid:** Air, kinematic viscosity ν = 1.5 × 10⁻⁵ m²/s
+- **Solver:** OpenFOAM v2406 — `simpleFoam` (steady-state, incompressible RANS)
+- **Turbulence model:** k-omega SST
+- **Wind speed:** 12.5 m/s (~45 km/h) — representative of road/time-trial cycling
+- **Iterations:** 500 (converged)
+- **Reference length:** 23.8 mm
+- **Reference area:** 7.14 × 10⁻³ m²
+- **Fluid:** Air, kinematic viscosity ν = 1.5 × 10⁻⁵ m²/s
 
 Each profile was meshed using `snappyHexMesh` from its STL geometry, run to convergence, and evaluated by its drag coefficient (Cd). Force coefficients were computed using OpenFOAM's `forceCoeffs` function object. Flow field slices were extracted at the mid-span cutting plane for visualization.
 
----
 
 ## Profiles Tested
 
@@ -35,11 +32,10 @@ Each profile was meshed using `snappyHexMesh` from its STL geometry, run to conv
 | 5 | `basic-half-circle` | Semicircular cross-section |
 | 6 | `truncated-circle` | Circle with flat trailing face |
 | 7 | `cylinder` | Full circular cross-section (baseline) |
-| 8 | `dfs-truncated-circle` | Modified truncated circle (DFS-inspired) |
+| 8 | `dfs-truncated-circle` | Modified truncated circle |
 
 STL geometry files for all profiles are in the [`models/`](models/) directory.
 
----
 
 ## Results
 
@@ -70,7 +66,6 @@ A key finding: a sharp nose alone does not reduce drag. The `sharp-nose-sharp-ta
 | sharp-nose-sharp-tail | ![sharp-nose-sharp-tail pressure](images/sharp-nose-sharp-tail-pressure.png) |
 -->
 
----
 
 ## Repository Structure
 
@@ -95,22 +90,6 @@ Each case directory follows the standard OpenFOAM structure:
 - `postProcessing/` — force coefficient history and cutting plane data
 - `Allrun` — script to reproduce the simulation
 
----
-
-## How to Reproduce
-
-Requirements: OpenFOAM v2406 (or compatible)
-
-```bash
-# Run a single case, e.g. truncated-circle
-cd truncated-circle
-./Allrun
-```
-
-Force coefficient results will be written to `postProcessing/forceCoeffs1/0/coefficient.dat`.
-Cutting plane flow field data will be written to `postProcessing/cuttingPlane/`.
-
----
 
 ## Tools
 
