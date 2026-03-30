@@ -60,15 +60,29 @@ The **truncated circle** achieved the lowest drag coefficient (Cd = 0.707), outp
 
 A key finding: a sharp nose alone does not reduce drag. The `sharp-nose-sharp-tail` profile was the worst performer by a wide margin (Cd = 1.250), nearly 2× the drag of the truncated circle. Tail geometry matters as much as, if not more than, the leading edge shape.
 
-<!-- Add flow visualization images here once exported from ParaView -->
-<!-- Example:
-### Flow Visualization
+### Mesh Visualization
 
-| Profile | Pressure Field |
-|---------|---------------|
-| truncated-circle | ![truncated-circle pressure](images/truncated-circle-pressure.png) |
-| sharp-nose-sharp-tail | ![sharp-nose-sharp-tail pressure](images/sharp-nose-sharp-tail-pressure.png) |
--->
+Mesh cross-sections extracted from ParaView (snappyHexMesh output, mid-span slice):
+
+| Profile | Mesh |
+|---------|------|
+| `cylinder` | ![cylinder mesh](images/mesh/circle.png) |
+| `basic-half-circle` | ![basic-half-circle mesh](images/mesh/half-circle.png) |
+| `sharp-nose-flat-tail` | ![sharp-nose-flat-tail mesh](images/mesh/sharp-nose-flat-tail.png) |
+| `dfs-truncated-circle` | ![dfs-truncated-circle mesh](images/mesh/dfs-truncated-circle.png) |
+
+<!-- Missing: sharp-nose-only, sharp-nose-sharp-tail, sharp-nose-rounded-tail, truncated-circle -->
+
+### Drag Visualization
+
+| Profile | Drag |
+|---------|------|
+| `cylinder` | ![cylinder drag](images/drag/circle-drag.png) |
+| `basic-half-circle` | ![basic-half-circle drag](images/drag/half-circle-drag.png) |
+| `sharp-nose-flat-tail` | ![sharp-nose-flat-tail drag](images/drag/sharp-nose-flat-tail-drag.png) |
+| `dfs-truncated-circle` | ![dfs-truncated-circle drag](images/drag/dfs-truncated-circle-drag.png) |
+
+<!-- Missing: sharp-nose-only, sharp-nose-sharp-tail, sharp-nose-rounded-tail, truncated-circle -->
 
 ---
 
