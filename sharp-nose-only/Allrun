@@ -1,0 +1,20 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Create the mesh
+runApplication blockMesh
+
+# Uncomment if using snappyHexMesh with your airfoil STL
+runApplication surfaceFeatureExtract
+runApplication snappyHexMesh -overwrite
+
+# Run the simulation
+runApplication simpleFoam
+
+# Calculate forces
+runApplication postProcess -func forceCoeffs -latestTime
+
+echo "Simulation completed. Check the postProcessing/forceCoeffs directory for the drag coefficient data."

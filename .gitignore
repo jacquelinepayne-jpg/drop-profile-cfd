@@ -1,0 +1,32 @@
+# OpenFOAM binary time-step output (large, reproducible via Allrun)
+[1-9]/
+[1-9][0-9]/
+[1-9][0-9][0-9]/
+[1-9][0-9][0-9][0-9]/
+
+# Keep postProcessing results (force coefficients, cutting planes)
+!postProcessing/
+
+# OpenFOAM processor directories (parallel runs)
+processor*/
+
+# Mesh files generated at runtime
+**/constant/polyMesh/
+**/constant/extendedFeatureEdgeMesh/
+**/*.eMesh
+
+# ParaView state files and generated outputs
+*.foam.orig
+*.pvd
+*.vtm
+*.vtmb
+
+# macOS
+.DS_Store
+
+# ParaView/VTK large outputs (optional — remove this if you want to share them)
+# postProcessing/cuttingPlane/
+
+# Log files
+log.*
+*.log
